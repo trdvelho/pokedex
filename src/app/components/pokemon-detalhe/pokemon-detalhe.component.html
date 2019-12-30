@@ -1,0 +1,38 @@
+<div class="toolbar" role="banner">
+  <img class="logo"
+    width="100"
+    alt="Synvia Logo"
+    src="https://s3-sa-east-1.amazonaws.com/prod-jobsite-files.kenoby.com/uploads/synvia123-1544117840-vi-0011-18-kenoby-logopng.png"
+  />
+</div>
+
+<ng-container *ngIf="pokemon">
+  <mat-card>
+    <mat-card-title>POKEMON: {{pokemon.Name }} {{pokemon.Generation.replace('Generation ','')}}</mat-card-title>
+    <mat-card-content>
+      {{pokemon.About}}
+
+      <mat-card-title>Resistência</mat-card-title>
+      <p *ngFor="let res of pokemon.Resistant ">{{res}}</p>
+
+      <mat-card-title>Tipos</mat-card-title>
+      <p *ngFor="let type of pokemon.Types ">{{type}}</p>
+
+      <mat-card-title>Fraquesas</mat-card-title>
+      <p *ngFor="let weak of pokemon.Weaknesses ">{{weak}}</p>
+
+
+
+      <mat-card-title>Ataques rápidos</mat-card-title>
+      <p *ngFor="let attack of pokemon['Fast Attack(s)'] ">{{attack.Name}}</p>
+
+      <mat-card-title>Ataques especiais</mat-card-title>
+      <p *ngFor="let especial of pokemon['Special Attack(s)'] ">{{especial.Name}}</p>
+
+      <ng-container *ngIf="pokemon['Next evolution(s)']">
+        <mat-card-title>Evoluções</mat-card-title>
+        <p *ngFor="let evolution of pokemon['Next evolution(s)'] ">{{evolution.Name}}</p>
+      </ng-container>
+    </mat-card-content>
+  </mat-card>
+</ng-container>

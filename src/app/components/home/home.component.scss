@@ -1,0 +1,27 @@
+table {
+  width: 100%;
+}
+input {
+    width: 100%;
+    height: 3em;
+    margin: 2em 0;
+    &::placeholder {
+      font-size: 1.5em;
+    }
+}
+
+.acao {
+  width: 10%;
+}
+
+.ataques, .header-ataques, .header-acao {
+  text-align: center;
+}
+
+button{ display:none; width: 100%;}
+tr.mat-row:hover{
+  background-color: rebeccapurple !important;
+  button{
+     display:block !important;
+  }
+}
